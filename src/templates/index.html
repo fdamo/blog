@@ -4,13 +4,13 @@
 {% block content %}
 
     <!-- Hero Section-->
-    <section style="background: url({% static 'img/hero.jpg' %}); background-size: cover; background-position: center center" class="hero">
+    <section style="background: url({% static 'img/campagnaDAmore.jpg' %}); background-size: cover; background-position: center center" class="hero">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
-            <h1>GIS Blog with Django</h1><a href="#" class="hero-link">Discover More</a>
+            <h1>GeoBlog con Django</h1><a href="#" class="hero-link">Scopri di più</a>
           </div>
-        </div><a href=".intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i> Scroll Down</a>
+        </div><a href=".intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i> Scorri in basso</a>
       </div>
     </section>
     <!-- Intro Section-->
@@ -18,8 +18,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-            <h2 class="h3">Some great intro here</h2>
-            <p class="text-big">Place a nice <strong>introduction</strong> here <strong>to catch reader's attention</strong>. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi.</p>
+            <h2 class="h3">Un blog per imparare</h2>
+            <p class="text-big">Questo spazio vuole essere un'area di <strong>studio</strong> per prendere confidenza con la piattaforma di sviluppo. Cercherò di implementarne la versione <strong>spaziale</strong> che prende il nome di <strong>GeoDjando.</strong></p>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@
         <!-- {{ object_list }} -->
         {% for obj in object_list %}
         <div class="row d-flex align-items-stretch">
-          {% if not forloop.first or not forloop.last %}
+          {% if not forloop.first and not forloop.last %}
           <div class="image col-lg-5"><img src="{{ obj.thumbnail.url }}" alt="..."></div>
           {% endif %}
           <div class="text col-lg-7">
@@ -68,7 +68,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h2><a href="#" class="hero-link">View More</a>
+            <h2>Sono <strong>Francesco D'Amore</strong></h2>
+            <p>Posseggo una laurea in <strong>ecologia</strong> ed una specializzazione in sistemi di informazione geografica <strong>(GIS)</strong></p><a href="#" class="hero-link">Scopri di più</a>
           </div>
         </div>
       </div>
@@ -77,8 +78,8 @@
     <section class="latest-posts"> 
       <div class="container">
         <header> 
-          <h2>Latest from the blog</h2>
-          <p class="text-big">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <h2>Le ultime dal blog</h2>
+          <p class="text-big">Oggi, 23/03/2021 il blog è online sulla piattaforma Pythonanywhere. Ancora tutto molto rudimentale.</p>
         </header>
         <div class="row">
           {% for obj in latest %}
@@ -106,16 +107,16 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>Subscribe to Newsletter</h2>
-            <p class="text-big">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h2>Sottoscrivi alla Newsletter</h2>
+            <p class="text-big">Per rimanere aggiornato.</p>
           </div>
           <div class="col-md-8">
             <div class="form-holder">
               <form action="." method="POST">
                 {% csrf_token %}
                 <div class="form-group">
-                  <input type="email" name="email" id="email" placeholder="Type your email address">
-                  <button type="submit" class="submit">Subscribe</button>
+                  <input type="email" name="email" id="email" placeholder="Scrivi il tuo indirizzo email qui">
+                  <button type="submit" class="submit">Sottoscrivi</button>
                 </div>
               </form>
             </div>
